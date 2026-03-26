@@ -75,3 +75,36 @@ function resetForm() {
 }
 
 resetBtn.addEventListener("click", resetForm);
+
+/* ----- Example 3 Filtering ---- */
+// TODO: Extract default data into a separate js file
+const SW_CHARACTERS = [
+  { name: "Luke Skywalker", alignment: "jedi" },
+  { name: "Obi-Wan Kenobi", alignment: "jedi" },
+  { name: "Yoda", alignment: "jedi" },
+  { name: "Mace Windu", alignment: "jedi" },
+  { name: "Ahsoka Tano", alignment: "jedi" },
+  { name: "Darth Vader", alignment: "sith" },
+  { name: "Emperor Palpatine", alignment: "sith" },
+  { name: "Count Dooku", alignment: "sith" },
+  { name: "Darth Maul", alignment: "sith" },
+  { name: "Grand Moff Tarkin", alignment: "empire" },
+  { name: "Director Krennic", alignment: "empire" },
+  { name: "Captain Phasma", alignment: "empire" },
+  { name: "Padmé Amidala", alignment: "republic" },
+  { name: "Bail Organa", alignment: "republic" },
+  { name: "Mon Mothma", alignment: "republic" },
+  { name: "General Grievous", alignment: "separatist" },
+  { name: "Nute Gunray", alignment: "separatist" },
+  { name: "Wat Tambor", alignment: "separatist" },
+];
+
+// DOM Selectors: filter control fieldset, list element to render the characters, results count to say how many are being filtered
+
+// render filtered characters
+
+// filter controls: only show the characters who's alignment matches that of the selected checkbox
+
+// render filtered characters on load for default values
+
+/* OPTIMIZATION Question: Is there a way to render even earlier or to avoid other errors etc? do initial list rendering there if so **HINT THERE IS!** */
