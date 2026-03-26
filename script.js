@@ -1,5 +1,7 @@
 "use strict";
 
+/* ----- Example 1 ----- */
+
 // select DOM nodes
 const toggleBtn = document.getElementById("toggle-btn");
 const toggleStatus = document.getElementById("toggle-status");
@@ -19,3 +21,15 @@ toggleBtn.addEventListener("click", () => {
 
   // toggleStatus.textContent = isActiveToggle ? "Active" : "Inactive";
 });
+
+/* ----- Example 2 ----- */
+
+// select DOM Nodes
+
+// create an initial list
+
+// render list
+
+// Event that accesses input field information and appends it to the list and re-renders that list to the DOM
+
+// reset button -> re-render the default list without user additions
