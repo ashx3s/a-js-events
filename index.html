@@ -26,6 +26,29 @@
       <p id="toggle-status">Status: <strong>inactive</strong></p>
       <p><em>To try option 2 as noted on line 18 of the script file, move the id to the strong tag.</em></p>
     </section>
+
+    <section id="section-form">
+      <h2>2. Form Submit → Array → DOM</h2>
+      <p>
+        Submitting the form pushes the input value into an array, then
+        re-renders the full list. The Reset button restores the default entries.
+      </p>
+
+      <form id="character-form" novalidate>
+        <div class="field">
+          <label for="character-input">Character name</label>
+          <input type="text" id="character-input" name="characterName" placeholder="e.g. Gandalf" required
+            autocomplete="off" />
+        </div>
+        <button type="submit">Add character</button>
+      </form>
+
+      <ul id="character-list" aria-label="Character list" aria-live="polite">
+        <!-- Rendered by JS -->
+      </ul>
+
+      <button id="reset-btn" type="button">Reset list</button>
+    </section>
   </main>
 </body>
 
