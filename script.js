@@ -121,7 +121,6 @@ function renderFilteredCharacters() {
           activeAlignments.includes(char.alignment),
         );
   // DOM Manipulation
-  console.log(filtered, activeAlignments);
   // clearing the list to get rid of old stuff
   swListEl.innerHTML = "";
   // forEach through content and print it to the dom
