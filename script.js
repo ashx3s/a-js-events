@@ -100,11 +100,48 @@ const SW_CHARACTERS = [
 ];
 
 // DOM Selectors: filter control fieldset, list element to render the characters, results count to say how many are being filtered
+const filterControls = document.getElementById("filter-controls");
+const swListEl = document.getElementById("sw-character-list");
+const resultCount = document.getElementById("result-count");
 
 // render filtered characters
+function renderFilteredCharacters() {
+  // get check box information for whatever is checked
+  const checkedBoxes = [
+    ...filterControls.querySelectorAll("input[type='checkbox']:checked"),
+  ];
+  // map values of the checkboxes
+  const activeAlignments = checkedBoxes.map((cb) => cb.value);
+
+  // filter the content based on what is checked in the checkbox
+  const filtered =
+    activeAlignments.length === 0
+      ? SW_CHARACTERS
+      : SW_CHARACTERS.filter((char) =>
+          activeAlignments.includes(char.alignment),
+        );
+  // DOM Manipulation
+  console.log(filtered, activeAlignments);
+  // clearing the list to get rid of old stuff
+  swListEl.innerHTML = "";
+  // forEach through content and print it to the dom
+  filtered.forEach(({ name, alignment }) => {
+    const li = document.createElement("li");
+    li.textContent = `${name} -- ${alignment}`;
+    swListEl.appendChild(li);
+  });
+  // result count is getting the filtered array length and comparing it against the initial length
+  resultCount.textContent = `Showing ${filtered.length} of ${SW_CHARACTERS.length} characters`;
+}
 
 // filter controls: only show the characters who's alignment matches that of the selected checkbox
 
 // render filtered characters on load for default values
-
+// add event listener to the controls so onchange it's going to render only the array elements based on alignment
+filterControls.addEventListener("change", (event) => {
+  if (event.target.name === "alignment") {
+    renderFilteredCharacters();
+  }
+});
+renderFilteredCharacters();
 /* OPTIMIZATION Question: Is there a way to render even earlier or to avoid other errors etc? do initial list rendering there if so **HINT THERE IS!** */
